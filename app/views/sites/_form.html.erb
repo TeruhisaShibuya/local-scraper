@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for (@site) do |f| %>
+
+        <%= f.label:name , "クローリングするサイト名を登録してください"  %>
+        <%= f.text_field :name,  :class => "form_control" %>
+
+        <%= f.label:url , "サイトのURLを入力してください" %>
+        <%= f.text_field :url, :class => "form_control" %>
+
+        <%= f.label:crawl , "クローリングするタグ情報を入力してください" %>
+        <%= f.text_field :crawl, :class => "form_control" %>
+
+        <%= f.label:登録する %>
+        <%= f.submit :class => "btn btn-primary" %>
+
+    <% end %>
+  </div>
+</div>

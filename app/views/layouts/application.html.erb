@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= render 'layouts/header' %>
+
+    <!--フラッシュメッセージを表示するための記述-->
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>       <!--ここにerbファイルが埋め込まれる-->
+    </div>
+
   </body>
 </html>

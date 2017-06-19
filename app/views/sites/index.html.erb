@@ -1,0 +1,19 @@
+<h1>スクレイピング対象サイト一覧画面</h1>
+
+<!--モデルのトータル数を記述する文言-->
+<%= page_entries_info @site %>
+
+<p>
+ <% @site.each do |site| %>
+   <br><%= site.name %></br>
+   <br><%= link_to site.url, site.url %></br>
+   <br><%= site.crawl %></br>
+        <!--pathの後は@siteでいけるのでは？？-->
+   <br><%= link_to "編集", edit_site_path(site.id) %></br>
+   <br><%= link_to "削除する", site, method: :delete %></br>
+ <% end %>
+</p>
+
+
+<!--kaminali記述-->
+<%= paginate @site %>
