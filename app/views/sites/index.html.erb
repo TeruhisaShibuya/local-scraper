@@ -10,7 +10,8 @@
    <br><%= site.crawl %></br>
         <!--pathの後は@siteでいけるのでは？？-->
    <br><%= link_to "編集", edit_site_path(site.id) %></br>
-   <br><%= link_to "削除する", site, method: :delete %></br>
+   <br><%= link_to "削除する", site, method: :delete,
+                                     data: {confirm: "Are you sure?"} %></br>
  <% end %>
 </p>
 

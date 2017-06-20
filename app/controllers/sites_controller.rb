@@ -37,6 +37,12 @@ class SitesController < ApplicationController
     end
   end
   
+  def destroy
+    Site.find(params[:id]).destroy
+    flash[:warning] = "登録サイトを削除しました"
+    redirect_to sites_path
+  end
+  
   
   private
   
