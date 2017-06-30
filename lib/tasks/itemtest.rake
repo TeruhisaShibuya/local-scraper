@@ -24,6 +24,9 @@ namespace :itemtest do
     url = f.parent.attribute('href').value
     p image
     p url
+
+    pry
+    
     @new = Item.new(:item_url => url, :image_url=> image )
     @new.save
   end #22のend

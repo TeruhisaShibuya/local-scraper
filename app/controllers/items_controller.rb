@@ -33,4 +33,8 @@ class ItemsController < ApplicationController
   def update
   end
 
+  def index
+  	@new = Item.all
+  end
+
 end
