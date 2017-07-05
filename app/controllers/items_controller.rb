@@ -30,11 +30,45 @@ class ItemsController < ApplicationController
     end
   end
 
-  def update
+
+  #更新情報を受け取るアクション
+  def update    
+
+    #Dteクラスを用意・日付を指定
+    require "date"
+    past_day = Date.new(2017, 6, 26)
+    new_day = Date.new(2017, 7, 5)  
+    
+    past_crawl = Item.where(created_at: past_day.all_day)
+    today_crawl = Item.where(created_at: new_day.all_day)
+
+    @past_crawl = past_crawl
+    @today_crawl = today_crawl
+    #p past_crawl
+    #puts today_crawl
+
+    #@past_crawl = past_crawl
+    
+    #比較用に書く変数のimage_urlの値を変数に入れておく
+    #past_image = past.imaga_url
+    #today_image = today_crawl.imaga_url
+    
+    #today_crawl.image_url = today_crawli
+    #past_crawl.image_url = past_crawli
+
+    #today_crawli.each do |x|
+     # unless x.include(past_crawli) then
+      # @new_in  = today_crawl
+      #end
+    #end
+
   end
+
 
   def index
   	@new = Item.all
+    @new = Item.page(params[:page])  #kaminariの定型文
+
   end
 
 end
