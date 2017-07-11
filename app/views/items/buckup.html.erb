@@ -1,19 +1,18 @@
-<h1>↓最新のクローリング結果↓</h1>
+<h1>Items#update練習中</h1>
 
-<% @new_ins.each do |y| %>
+<% @today_crawl.each do |y| %>
         <div class="col-sm-6 col-md-4 col-lg-3">
+        <p>本日の新入荷商品です</p>
         <%= link_to image_tag(y.image_url), y.item_url %>
         <%= link_to "商品詳細ページへ", y.item_url %>
-        <p>☆本日の新入荷商品です☆</p>
         </div>
 <% end %>
 
-<h1>↓ここから下は過去のクローリング結果↓</h1>
 
-<% @past_ins.each do |x| %>
+<% @past_crawl.each do |x| %>
         <div class="col-sm-6 col-md-4 col-lg-3">
         <%= link_to image_tag(x.image_url), x.item_url %>
         <%= link_to "商品詳細ページへ", x.item_url %>
-        <%= x.created_at.strftime("%Y/%m/%d") %> 入荷確認
+        <%= x.created_at.strftime("%Y/%m/%d") %> に入荷しました
         </div>
 <% end %>

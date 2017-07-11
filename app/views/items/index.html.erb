@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-      <% @new.each do |item| %>
+      <% @news.each do |item| %>
         <div class="col-sm-6 col-md-4 col-lg-3">
         <%= link_to image_tag(item.image_url), item.item_url %>
         <%= link_to "商品詳細ページへ", item.item_url %>
@@ -10,4 +10,4 @@
   </div>
 </div>
 
-<%= paginate @new %>  <!--kaminariの定型文-->
+<%= paginate @news %>  <!--kaminariの定型文-->
