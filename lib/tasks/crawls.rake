@@ -7,6 +7,7 @@ namespace :crawls do
     require 'nokogiri'
     
     sites = Site.all
+    p sites
     sites.each do |site|
       p "eachのしただよ"
       charset = nil
