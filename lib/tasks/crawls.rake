@@ -14,18 +14,18 @@ namespace :crawls do
         charset = url_column.charset   
         url_column.read   
       end #open(site.url)のend
-          
+      p "1"    
       doc = Nokogiri::HTML.parse(html, nil, charset) 
 
       crawl_points = doc.xpath("#{site.crawl}")
- 
+      p "2"
       scraiping_targets = crawl_points.css('a').css('img')
       scraiping_targets.each do |scraping_target|
         image = scraping_target.attribute('src').value
         url = scraping_target.parent.attribute('href').value
 
         @news = Item.new(:item_url => url, :image_url=> image )
-        puts "成功した?"
+        p @news
         
       end #scraping_targets.eachのend
 
