@@ -2,12 +2,13 @@ namespace :crawls do
   #定型文
   desc "1日/回のクローリング実行タスク"
   task regular_c: :environment do
-  
+    p "どう？"
     require 'open-uri' 
     require 'nokogiri'
     
     sites = Site.all
     sites.each do |site|
+      p "eachのしただよ"
       charset = nil
 
       html = open(site.url) do |url_column|  #site.urlでurlカラムを呼び出せる
