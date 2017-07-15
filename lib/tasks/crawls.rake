@@ -25,7 +25,8 @@ namespace :crawls do
         url = scraping_target.parent.attribute('href').value
 
         @news = Item.new(:item_url => url, :image_url=> image )
-        p @news#.save
+        puts "成功した?"
+        
       end #scraping_targets.eachのend
 
     end #sites.eachのend  @newsは回すサイト一つ一つ対して保存しなくてはならないぞ！
